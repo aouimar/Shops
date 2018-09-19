@@ -34,5 +34,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/shops', 'HomeController@shops')->name('shops');
-/*Route::get('/login', 'AuthController@index')->name('login');
-Route::get('/home', 'HomeController@index')->name('home');*/
+

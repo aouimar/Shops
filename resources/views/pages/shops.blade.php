@@ -14,9 +14,14 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project One</a>
+              <a>Shops 1</a>
               </h4>
-              <p class="card-text"></p>
+              <p class="card-text">
+              	<a class="btn" href="#">
+  				<i class="fa fa-thumbs-up"></i> Like</a>
+  				<a class="btn" href="#">
+  				<i class="fa fa-thumbs-down"></i> Dislike</a>
+              </p>
             </div>
           </div>
         </div>
@@ -25,7 +30,7 @@
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Project Two</a>
+                <a>Project Two</a>
               </h4>
               <p class="card-text"></p>
             </div>

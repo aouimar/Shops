@@ -1,5 +1,7 @@
 @extends('layouts/index')
 
+
+
 @section('navigation') 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
