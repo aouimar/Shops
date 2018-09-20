@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+     return view('welcome');
+    /**
+     * return dd(DB::table('users')->whereName('zakaria')->get());
+     */
 });
 
 Route::get('/shops4', function () {

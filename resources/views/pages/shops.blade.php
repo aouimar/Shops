@@ -1,30 +1,41 @@
 @extends('layouts.index')
 
+@section('shop_card')
+  <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+      <div class="card-body">
+        <h4 class="card-title"> <a>Shops 1</a></h4>
+        <p class="card-text">
+            <a class="btn" href="#"><i class="fa fa-thumbs-up"></i> Like</a>
+            <a class="btn" href="#"><i class="fa fa-thumbs-down"></i> Dislike</a>
+        </p>
+      </div>
+    </div>
+  </div>
+@endsection
+
 @section('shops')
 <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
+      <h1 class="my-4">List of shops
+        
       </h1>
-
-      <div class="row">
+    @yield('shop_card')
+    <!--  <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
-              <h4 class="card-title">
-              <a>Shops 1</a>
-              </h4>
+              <h4 class="card-title"> <a>Shops 1</a></h4>
               <p class="card-text">
-              	<a class="btn" href="#">
-  				<i class="fa fa-thumbs-up"></i> Like</a>
-  				<a class="btn" href="#">
-  				<i class="fa fa-thumbs-down"></i> Dislike</a>
+              	<a class="btn" href="#"><i class="fa fa-thumbs-up"></i> Like</a>
+  				      <a class="btn" href="#"><i class="fa fa-thumbs-down"></i> Dislike</a>
               </p>
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>

@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         Eloquent::unguard();
-        $this->call(UsersTablesSeeder::class);
+        //$this->call(UsersTablesSeeder::class);
+        //$this->call(ShopsTableSeeder::class);
+        factory(App\User::class, 1)->create();
+        factory(App\Shop::class, 8)->create();
     }
 }
