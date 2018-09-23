@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Shop;
+use App\User;
+use App\FavoriteShop;
+
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -28,6 +35,10 @@ class HomeController extends Controller
 
     public function shops()
     {
-        return view('pages.shops');
+        $shops = Shop::orderBy('distance')->get();
+        
+        $favs = new FavoriteShop;
+
+        return view('pages.shops')->withShops($favs->getOrdinaryShop())->withFavs($favs->getFavoriteShop());
     }
 }

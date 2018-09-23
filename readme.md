@@ -2,7 +2,7 @@
 
 
 This application is programmed using PHP/LARAVEL 5.4 and Bootstrap 4.3
-Some useful command that i used to do somme setting and database configuration:
+Some useful command that i used to do some setting and database configuration:
 
 
 php artisan key:generate

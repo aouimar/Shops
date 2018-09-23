@@ -11,30 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-     return view('welcome');
-    /**
-     * return dd(DB::table('users')->whereName('zakaria')->get());
-     */
-});
-
-Route::get('/shops4', function () {
-	$shops = [
-		'shop1',
-		'shop2',
-		'shop3',
-		'shop4'
-	];
-
-    return view('pages.shops', compact('shops'));
-});
-
-Route::get('/help', function (){
-	return view('pages/help');
-});
 
 Auth::routes();
 
+Route::get('/', function () {
+     return view('welcome');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/shops', 'HomeController@shops')->name('shops');
+//Route::post('/shops', 'FavoriteShopController@refreshFavs')->name('refreshFavs');
+Route::get('/shops/user', 'FavoriteShopController@refreshFavs');
 
+Route::post('/shops/{id}/like','FavoriteShopController@likeShop');
+Route::post('/shops/{id}/dislike','FavoriteShopController@dislikeShop');
+Route::post('/shops/{id}/remove','FavoriteShopController@removeShop');
+Route::get('/content/#prefered', 'FavoriteShopController@refreshFavs');
