@@ -8,9 +8,13 @@ Some useful command that i used to do some setting and database configuration:
 php artisan key:generate
 
 php artisan migrate
+
 php artisan make:migration name_migration --table=table_name
+
 php artisan migrate:refresh --no-interaction --seed
+
 php artisan make:seeder UsersTablesSeeder
+
 php artisan db:seed
 
 php artisan make:controller MainController
