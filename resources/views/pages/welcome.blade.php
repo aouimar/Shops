@@ -1,4 +1,4 @@
-@extends('layouts/index')
+@extends('layouts.index')
 
 @section('navigation') 
     <!-- Navigation -->
@@ -28,7 +28,8 @@
 @endsection      
 
 <body>
-    {{ 'Welcome to Shops portfolio created with PHP/Laravel and Bootstrap' }}
+    {{ 'Welcome Page' }}
 </body>
+
        
 

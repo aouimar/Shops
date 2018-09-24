@@ -8,6 +8,7 @@ use App\FavoriteShop;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FavoriteShopController extends Controller
 {
@@ -30,7 +31,7 @@ class FavoriteShopController extends Controller
     {
         $shop_id=$id;
         $user_id=Auth::user()->id;
-        
+        //debug_to_console('removeshop');
         $firstEntry = FavoriteShop::where('shop_id', $shop_id)
                                   ->where('user_id', $user_id)
                                   ->where('liked', true)
@@ -64,8 +65,6 @@ class FavoriteShopController extends Controller
                 $firstEntry->update(['liked' => true, 'disliked' => false]);
             }
         }
-
-        
     }
 
 
@@ -74,28 +73,32 @@ class FavoriteShopController extends Controller
         $shop_id=$id;
         $user_id=Auth::user()->id;
         
-        $existingEntry = FavoriteShop::where('disliked', true)
-                                     ->where('shop_id', $shop_id)
-                                     ->where('user_id', $user_id)->get();
         $firstEntry = FavoriteShop::where('shop_id', $shop_id)
-                                  ->where('user_id', $user_id);
-          
-        if($existingEntry->isEmpty()){                                                      
-            if($firstEntry->get()->isEmpty()){
-                $fav = new FavoriteShop;
-                $fav->shop_id = $shop_id;
-                $fav->user_id = $user_id;
-                $fav->disliked = true;
-                $fav->save();
-            }
-            else{
-                $firstEntry->update(['liked' => false, 'disliked' => true]);
-            }
+                                  ->where('user_id', $user_id)->get();
+ 
+         if(!$firstEntry->isEmpty()){
+            $fav=$firstEntry->first();
+            $fav->liked=false;
+            $fav->disliked=true;
+            $fav->save();
+        }
+        else{
+            //debug_to_console('here1');
+            $fav = new FavoriteShop;
+            $fav->shop_id = $shop_id;
+            $fav->user_id = $user_id;
+            $fav->disliked = true;
+            $fav->save();
         }
     }
 
-    
+    function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
 
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+    }
     /**
      * Store a newly created resource in storage.
      *

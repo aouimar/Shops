@@ -12,10 +12,8 @@ class ShopsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table('shops')->insert([
             'name' => str_random(10),
-            'slug' => str_slug('shop', $separator = '-'),
             'distance' => random(1000)
         ]);
     }

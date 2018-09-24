@@ -16,7 +16,6 @@ use Faker\Generator as Faker;
 $factory->define(App\Shop::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'slug' => $faker->slug,
         'distance' => $faker->randomNumber($nbDigits = NULL, $strict = false) 
     ];
 });

@@ -17,8 +17,11 @@ class ShopsHelpers
 	}
 
 	public static function since($fav){
-		return Carbon::parse($fav->ordinaryShop()->first()->updated_at)
-						->diffInHours(Carbon::now());
+		$var=$fav->ordinaryShop()->first();
+		if($var){
+			return Carbon::parse($fav->ordinaryShop()->first()->updated_at)
+							->diffInHours(Carbon::now());
+		}
 	}
 }
 

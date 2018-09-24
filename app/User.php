@@ -31,6 +31,9 @@ class User extends Authenticatable
         return $this->hasMany('\App\FavoriteShop')->where('liked', true);
     }
 
+    public function allShop(){
+        return $this->hasMany('\App\FavoriteShop')->whereUser_id(Auth::user()->id);;
+    }
     public function ordinaryShop(){
         return $this->hasMany('\App\FavoriteShop')->whereLiked(false);
     }

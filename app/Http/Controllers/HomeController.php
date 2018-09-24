@@ -34,11 +34,9 @@ class HomeController extends Controller
     }
 
     public function shops()
-    {
-        $shops = Shop::orderBy('distance')->get();
-        
+    {   
         $favs = new FavoriteShop;
-
-        return view('pages.shops')->withShops($favs->getOrdinaryShop())->withFavs($favs->getFavoriteShop());
+        return view('pages.shops')->withShops($favs->getNearbyShop())
+                                 ->withFavs($favs->getFavoriteShop());
     }
 }

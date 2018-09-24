@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\Auth;
 
 /**
  * 
@@ -26,6 +26,10 @@ class Shop extends Model
 		return $this->hasMany('\App\FavoriteShop')->where('liked', true);
 	}
 
+	public function allShop(){
+        return $this->hasMany('\App\FavoriteShop')->whereUser_id(Auth::user()->id);
+    }
+    
 	public function ordinaryShop(){
         return $this->hasMany('\App\FavoriteShop')->whereLiked(false);
     }

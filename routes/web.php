@@ -15,15 +15,14 @@
 Auth::routes();
 
 Route::get('/', function () {
-     return view('welcome');
+     return view('pages.welcome');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/shops', 'HomeController@shops')->name('shops');
-//Route::post('/shops', 'FavoriteShopController@refreshFavs')->name('refreshFavs');
-Route::get('/shops/user', 'FavoriteShopController@refreshFavs');
+//Route::get('/shops/user', 'FavoriteShopController@refreshFavs');
 
 Route::post('/shops/{id}/like','FavoriteShopController@likeShop');
 Route::post('/shops/{id}/dislike','FavoriteShopController@dislikeShop');
 Route::post('/shops/{id}/remove','FavoriteShopController@removeShop');
-Route::get('/content/#prefered', 'FavoriteShopController@refreshFavs');
+//Route::get('/content/#prefered', 'FavoriteShopController@refreshFavs');

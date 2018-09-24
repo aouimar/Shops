@@ -6,29 +6,29 @@
         var refreshFavs = function(){
             setTimeout(function(){
               $( "#favs-row" ).load( "shops #favs-row");
-            }, 5);
+            }, 50);
             setTimeout(function(){
               $( "#shops-row" ).load( "shops #shops-row");
-            }, 5);
+            }, 50);
           };
 
         var actOnLike = function (shopid) {
             axios.post('/shops/' + shopid + '/like');
              setTimeout(function(){
               $( "#shops-row" ).load( "shops #shops-row");
-            }, 5);
+            }, 50);
         };
         var actOnRemove = function (shopid) {
             axios.post('/shops/' + shopid + '/remove');
              setTimeout(function(){
               $( "#favs-row" ).load( "shops #favs-row");
-            }, 5);
+            }, 50);
         };
         var actOnDislike = function (shopid) {
             axios.post('/shops/' + shopid + '/dislike');
             setTimeout(function(){
               $( "#shops-row" ).load( "shops #shops-row");
-            }, 5);
+            }, 50);
         };
 
     </script>
@@ -100,6 +100,7 @@
           <div class="card-body">
             <h4 class="card-title"> <a>{{$shop->name}}</a></h4>
             <h5>At distance {{$format_distance($shop)}}</h5>
+            <!--<small>disliked since {{$since($shop)}}</small>-->
             <p class="card-text">
               @csrf
                 <button id="btn-like" class="btn btn-success btn-xs" onclick="actOnLike({{$shop->id}});">
