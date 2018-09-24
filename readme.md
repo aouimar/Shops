@@ -1,7 +1,7 @@
 ##
 
 
-This application is programmed using PHP/LARAVEL 5.4 and Bootstrap 4.3
+This application is programmed using PHP/LARAVEL 5.4 and Bootstrap 4.3 , FontAwesome. 
 
 Some useful command that i used to do some setting and database configuration:
 
