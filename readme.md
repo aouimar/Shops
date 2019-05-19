@@ -45,7 +45,7 @@ i've done some minor modification in the login/register .blade.php to sweet my n
 
 # 2-3-1 models
 
- -User.php : conatains information about user like name password etc 
+ -User.php : contains information about user like name password etc 
  	        and some useful methods to define some relation with the other Model like favorite shop.
 
  -Shop.php : contains information about the shop , name , distance , liked and somme useful methods.
