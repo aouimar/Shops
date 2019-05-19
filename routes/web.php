@@ -12,17 +12,20 @@
 */
 
 
+//route to view.auth
 Auth::routes();
 
+//route to welcoming page / default
 Route::get('/', function () {
      return view('pages.welcome');
 });
 
+//route to welcome/shops pages
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/shops', 'HomeController@shops')->name('shops');
-//Route::get('/shops/user', 'FavoriteShopController@refreshFavs');
 
+//somme routes to trigger (http post) back end controller FavoriteShopController 
 Route::post('/shops/{id}/like','FavoriteShopController@likeShop');
 Route::post('/shops/{id}/dislike','FavoriteShopController@dislikeShop');
 Route::post('/shops/{id}/remove','FavoriteShopController@removeShop');
-//Route::get('/content/#prefered', 'FavoriteShopController@refreshFavs');
+
